@@ -13,3 +13,5 @@ The margins and the paralax effect are both IO with the parallax being in the ht
 ### Still Needed
 * lazy loading images
 * contact
+
+### SSH

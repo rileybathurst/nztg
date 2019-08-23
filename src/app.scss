@@ -6,11 +6,29 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+//  max-width: 100%; // reset
+//  overflow-x: hidden;
+  word-wrap: anywhere;
 }
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
+
+h1 {
+  margin-top: 0;
+  font-size: 2.369em;
+}
+
+h2 {font-size: 2.369em;}
+
+h3 {font-size: 2.369em;}
+
+h4 {font-size: 1.777em;}
+
+h5 {font-size: 1.333em;}
+
+small {font-size: 0.75em;}
 
 a {
   color: #43c6ac;
@@ -29,15 +47,15 @@ quote {
   font-style: italic;
 }
 
-z1 {
+z-1 {
   z-index: 1;
 }
 
-z2 {
+z-2 {
   z-index: 2;
 }
 
-z3 {
+z-3 {
   z-index: 3;
 }
 
@@ -111,12 +129,13 @@ header {
   grid-row: 1;
 }
 
+header picture {
+  min-height: 20em; // hack to fix small size the logo getting hidden
+}
+
 .header-logo {
   padding: $global-padding;
   max-width: 50%;
-}
-
-main {
 }
 
 .io-push {
@@ -146,6 +165,20 @@ main {
   grid-gap: 2em;
   // https://codepen.io/rachelandrew/pen/GZQYQa
   grid-template-columns: repeat(auto-fill, minmax(22em,1fr));
+  // has a minor problem when the screen gets below 22em wide
+}
+/*
+#services {
+      @media (max-width: 22em) {
+      width: 50%;
+    }
+}
+*/
+
+#services article {
+    @media (max-width: 22em) {
+      width: 100vw;
+    }
 }
 
 #testimonials {
@@ -153,6 +186,12 @@ main {
   grid-gap: 2em;
   // https://codepen.io/rachelandrew/pen/GZQYQa
   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+}
+
+#testimonials article {
+    @media (max-width: 300px) {
+      width: 100vw;
+    }
 }
 
 .service, .testimonial {
@@ -214,18 +253,31 @@ main {
   justify-self: stretch;
 }
 
+footer h2 {
+  @media (max-width: 22em) {
+    font-size: 1.777em;
+  }
+}
 
+footer picture {
+  min-height: 30em; // hack to make sure the image is always behind the text
+}
+
+.footer-img {
+  background: black;
+  z-index: -2; // get behind the full width img
+}
 
 .footer-text {
   align-self: center;
   justify-self: center;
   text-align: center;
+  color: white;
 }
-
-
 
 // testing
 .opac {
-  opacity: 0.3;
+  opacity: 0.5;
+  background: #000;
 }
 

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://nztourguide.co.nz/sitemap.xml

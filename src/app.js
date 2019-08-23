@@ -7,37 +7,6 @@ req.keys().forEach(function(key){
   req(key);
 });
 
-// data and mostly from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-import data from './data.json'
-
-// fill services with JSON data
-/* for (var i = 0; i < data.services.length; i++) {
-
-  var myArticle = document.createElement('article');
-  myArticle.setAttribute("class", "service io-push");
-  var myH3 = document.createElement('h3');
-  var myIcon = document.createElement('div');
-  myIcon.setAttribute("class", "icon");
-  var myPara1 = document.createElement('p');
-  var myBackground = document.createElement('div');
-  myBackground.setAttribute("class", "skewer");
-
-  myH3.textContent = data.services[i].title;
-  myIcon.innerHTML = data.services[i].icon;
-  myPara1.textContent = data.services[i].excerpt;
-
-  myArticle.appendChild(myH3);
-
-  if (data.services[i].hasOwnProperty('icon')) {
-  myArticle.appendChild(myIcon);
-  }
-
-  myArticle.appendChild(myPara1);
-  myArticle.appendChild(myBackground);
-
-  document.getElementById('services').appendChild(myArticle);
-} */
-
 // fill testimonials with JSON data
 for (var j = 0; j < data.testimonials.length; j++) {
 

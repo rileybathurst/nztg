@@ -17,18 +17,35 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-top: 0;
-  font-size: 2.369em;
+  font-size: 3.052em;
 }
 
-h2 {font-size: 2.369em;}
+h2 {
+  font-size: 1.953em;
+    @media (min-width: 22em) {
+    font-size: 2.441em;
+  }
+}
 
-h3 {font-size: 2.369em;}
+footer h2 {
+  font-size: 1.563em;
+    @media (min-width: 22em) {
+    font-size: 2.441em;
+  }
+}
 
-h4 {font-size: 1.777em;}
+h3 {
+  font-size: 1.563em;
+   @media (min-width: 22em) {
+    font-size: 1.953em;
+  }
+}
 
-h5 {font-size: 1.333em;}
+h4 {font-size: 1.563em;}
 
-small {font-size: 0.75em;}
+h5 {font-size: 1.25em;}
+
+small, .text_small {font-size: 0.8em;}
 
 a {
   color: #43c6ac;
@@ -251,12 +268,6 @@ header picture {
   grid-column: 1;
   align-self: stretch;
   justify-self: stretch;
-}
-
-footer h2 {
-  @media (max-width: 22em) {
-    font-size: 1.777em;
-  }
 }
 
 footer picture {

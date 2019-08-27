@@ -93,7 +93,7 @@ if ('IntersectionObserver' in window &&
 'IntersectionObserverEntry' in window &&
 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
 
-  let ioparallax = document.querySelectorAll('.io-parallax');
+  let ioparallax = document.querySelectorAll('.io-parallax'); // doesnt seem used can I skip it
 
   var paraSteps = 20.0;
 

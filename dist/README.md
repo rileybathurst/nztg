@@ -16,3 +16,4 @@ The margins and the paralax effect are both IO with the parallax being in the ht
 
 ### SSH
 monday
+fix the pr

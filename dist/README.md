@@ -18,3 +18,4 @@ The margins and the paralax effect are both IO with the parallax being in the ht
 monday
 remove crap
 why not?
+echo

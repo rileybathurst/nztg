@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/app.scss', './src/app.js', './index.html'],
+  entry: ['./src/app.scss', './src/app.js', './index.html', './src/data.json'],
   output: {
     filename: 'bundle.js',
   },
@@ -33,7 +33,11 @@ module.exports = {
             }
           },
         ]
-      },
+      } /*,
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      } */ ,
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -55,8 +59,8 @@ module.exports = {
          use: [
            'file-loader'
          ]
-       },
-    ],
+       }
+    ]
   },
   plugins: [
     new CompressionPlugin({

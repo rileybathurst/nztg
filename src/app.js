@@ -7,6 +7,8 @@ req.keys().forEach(function(key){
   req(key);
 });
 
+const data = require('./data.json');
+
 // fill testimonials with JSON data
 for (var j = 0; j < data.testimonials.length; j++) {
 

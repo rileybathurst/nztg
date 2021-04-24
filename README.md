@@ -1,7 +1,7 @@
 # One Page Site
 New Zealand Tour Guide Services 2.0 rebuild focusing on speed built with [webpack](https://webpack.js.org)
 
-``` npm run start ```
+``` npm start ```
 
 ``` npm run build ```
 
@@ -15,9 +15,7 @@ The margins and the paralax effect are both IO with the parallax being in the ht
 [CSS-Tricks](https://css-tricks.com/creating-non-rectangular-headers/)
 
 ### Dist files
-[Seperate Repo](https://github.com/rileybathurst/NZTG-Dist) pushed from hosting - this needs to move to AWS
-
-
+[Seperate Repo](https://github.com/rileybathurst/NZTG-Dist) pushed from hosting - this needs to move
 
 # Issues
 

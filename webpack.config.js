@@ -1,6 +1,6 @@
 // const path = require('path');
 const autoprefixer = require('autoprefixer');
-const CompressionPlugin = require('compression-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: ['./src/app.scss', './src/app.js', './index.html', './src/data.json'],
@@ -18,7 +18,7 @@ module.exports = {
               name: 'bundle.css',
             },
           },
-          { loader: 'extract-loader' },
+          // { loader: 'extract-loader' },
           { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
@@ -52,7 +52,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: ['file-loader?name=[name].[ext]', 'extract-loader', 'html-loader'],
+        use: ['file-loader?name=[name].[ext]', 'html-loader'], // 'extract-loader',
       },
       {
          test: /\.(png|svg|jpg|gif)$/,
@@ -62,7 +62,7 @@ module.exports = {
        }
     ]
   },
-  plugins: [
+  /* plugins: [
     new CompressionPlugin({
       // brotli isnt working on this comoression path
       /* filename: '[path].br[query]',
@@ -71,7 +71,7 @@ module.exports = {
       compressionOptions: { level: 11 },
       threshold: 10240,
       minRatio: 0.8,
-      deleteOriginalAssets: false, */
+      deleteOriginalAssets: false, 
     })
-  ],
+  ], */
 };

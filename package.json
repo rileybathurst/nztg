@@ -1,8 +1,8 @@
 {
   "name": "nztg2",
   "version": "2.0.1",
-  "description": "",
-  "main": "./src/index.html",
+  "description": "new zealand tour guide single page site",
+  "main": "./index.html",
   "scripts": {
     "start": "parcel serve ./src/index.html",
     "build": "parcel build ./src/index.html"
@@ -15,7 +15,6 @@
     "sass": "^1.32.11"
   },
   "dependencies": {
-    "lodash": "^4.17.19",
     "lozad": "^1.9.0"
   }
 }

@@ -1,4 +1,4 @@
-// const path = require('path');
+/* // const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -55,3 +55,4 @@ module.exports = {
     ],
   }
 };
+ */

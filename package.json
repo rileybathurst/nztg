@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
-    "start": "webpack-dev-server"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "json-loader": "^0.5.7",
+    "parcel-bundler": "^1.12.5",
     "postcss-loader": "^3.0.0",
     "sass": "^1.32.11",
     "sass-loader": "^7.1.0",

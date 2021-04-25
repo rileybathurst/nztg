@@ -1,13 +1,15 @@
-import _ from 'lodash';
+/* import _ from 'lodash';
 
 // this does just load the whole file instead of specific images which kinda defeats the point
 // tree shaking could probably fix this
 var req = require.context("./images/", false, /.*\.(png|jpe?g|svg)$/);
 req.keys().forEach(function(key){
   req(key);
-});
+}); */
 
-const data = require('./data.json');
+// const data = require('./data.json');
+import data from './data.json'
+// console.log(data.testimonials[0]);
 
 // fill testimonials with JSON data
 for (var j = 0; j < data.testimonials.length; j++) {
@@ -148,10 +150,7 @@ if ('IntersectionObserver' in window &&
   }
 }
 
-
-
-
-
-
 // Lazy load
 import lozad from 'lozad';
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();

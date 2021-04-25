@@ -4,29 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "autoprefixer": "^9.6.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.0.0",
     "extract-loader": "^3.1.0",
-    "file-loader": "^4.0.0",
-    "html-loader": "^0.5.5",
-    "json-loader": "^0.5.7",
-    "parcel-bundler": "^1.12.5",
-    "postcss-loader": "^3.0.0",
+    "parcel": "^2.0.0-beta.2",
     "sass": "^1.32.11",
-    "sass-loader": "^7.1.0",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack": "^4.35.2"
   },
   "dependencies": {
     "lodash": "^4.17.19",

@@ -15,29 +15,34 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 1.953rem;
+}
+@media (min-width: 30rem) {
+  h1 {
+    font-size: 3.052rem;
+  }
 }
 
 h2 {
-  font-size: 1.953em;
+  font-size: 1.563rem;
 }
-@media (min-width: 22rem) {
+@media (min-width: 30rem) {
   h2 {
-    font-size: 2.441em;
+    font-size: 2.441rem;
   }
 }
 
 footer h2 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 @media (min-width: 30rem) {
   footer h2 {
-    font-size: 2.441em;
+    font-size: 2.441rem;
   }
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 @media (min-width: 30rem) {
   h3 {
@@ -46,15 +51,15 @@ h3 {
 }
 
 h4 {
-  font-size: 1.563em;
+  font-size: 1.563rem;
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 small, .text_small {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 a {
@@ -116,7 +121,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  place-items: center;
+  justify-items: center;
 }
 
 .grid {
@@ -160,14 +165,19 @@ header {
 }
 
 header {
-  margin-top: -5em;
   overflow: hidden;
 }
 
 header picture {
-  min-height: 20em;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10rem), 0 calc(100% - 5rem));
+  min-height: 20rem;
   animation-timing-function: ease;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 calc(100% - 1.5rem));
+}
+@media (min-width: 30rem) {
+  header picture {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 0 calc(100% - 2rem));
+    max-height: 35rem;
+  }
 }
 
 footer {
@@ -180,6 +190,11 @@ footer picture {
 .header-logo {
   padding: 1em;
   max-width: 50%;
+}
+@media (min-width: 30rem) {
+  .header-logo {
+    padding: 2em;
+  }
 }
 
 .io-push {
@@ -199,6 +214,7 @@ footer picture {
 } */
 .io-parallax {
   animation-timing-function: ease;
+  clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 6rem), 0 calc(100% - 1rem));
   clip-path: polygon(0 5rem, 100% 0, 100% calc(100% - 10rem), 0 calc(100% - 5rem));
 }
 

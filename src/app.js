@@ -21,7 +21,7 @@ for (var j = 0; j < data.testimonials.length; j++) {
   var myPara1 = document.createElement('p');
   var schemaReview = document.createElement('span');
   schemaReview.setAttribute("itemprop", "review");
-  var myH3 = document.createElement('quote');
+  var myH3 = document.createElement('blockquote');
 
   schemaReview.textContent = data.testimonials[j].test;
   myH3.textContent = data.testimonials[j].author;

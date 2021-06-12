@@ -457,7 +457,7 @@ for (var j = 0; j < _dataJsonDefault.default.testimonials.length; j++) {
   var myPara1 = document.createElement('p');
   var schemaReview = document.createElement('span');
   schemaReview.setAttribute("itemprop", "review");
-  var myH3 = document.createElement('quote');
+  var myH3 = document.createElement('blockquote');
   schemaReview.textContent = _dataJsonDefault.default.testimonials[j].test;
   myH3.textContent = _dataJsonDefault.default.testimonials[j].author;
   myTestimonal.appendChild(myBackground);

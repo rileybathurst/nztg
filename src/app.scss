@@ -209,8 +209,11 @@ footer {
 .io-parallax {
   animation-timing-function: ease;
   clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 6rem), 0 calc(100% - 1rem));
-  
-  clip-path: polygon(0 5rem, 100% 0, 100% calc(100% - 10rem), 0 calc(100% - 5rem));
+
+  @media(min-width: 30rem) {
+    clip-path: polygon(0 5rem, 100% 0, 100% calc(100% - 10rem), 0 calc(100% - 5rem));
+    max-height: 40rem;
+  }
 }
 
 #services {

@@ -15,23 +15,27 @@ import data from './data.json'
 for (var j = 0; j < data.testimonials.length; j++) {
 
   var myTestimonal = document.createElement('article');
+  myTestimonal.setAttribute("class", "testimonial io-push");
+
   var myBackground = document.createElement('div');
   myBackground.setAttribute("class", "skewer");
-  myTestimonal.setAttribute("class", "testimonial io-push");
+  
   var myPara1 = document.createElement('p');
+  
   var schemaReview = document.createElement('span');
-  schemaReview.setAttribute("itemprop", "review");
-  var myH3 = document.createElement('blockquote');
+  schemaReview.setAttribute("itemprop", "review"); // metatag
+  
+  var myH3 = document.createElement('blockquote'); // why is my H3 a blockquote
 
-  schemaReview.textContent = data.testimonials[j].test;
+  schemaReview.textContent = data.testimonials[j].test; // add this to the span
   myH3.textContent = data.testimonials[j].author;
 
-  myTestimonal.appendChild(myBackground);
-  myTestimonal.appendChild(myPara1);
-  myPara1.appendChild(schemaReview);
-  myTestimonal.appendChild(myH3);
+  myTestimonal.appendChild(myBackground); // empty div for styling
+  myTestimonal.appendChild(myPara1); // p after the empty div
+  myPara1.appendChild(schemaReview); // puts the span inside the p
+  myTestimonal.appendChild(myH3); // author after the p
 
-  document.getElementById('testimonials').appendChild(myTestimonal);
+  document.getElementById('testimonials').appendChild(myTestimonal); // article in the section
 }
 
 // Large margins when IO comes into play

@@ -1,13 +1,3 @@
-/* import _ from 'lodash';
-
-// this does just load the whole file instead of specific images which kinda defeats the point
-// tree shaking could probably fix this
-var req = require.context("./images/", false, /.*\.(png|jpe?g|svg)$/);
-req.keys().forEach(function(key){
-  req(key);
-}); */
-
-// const data = require('./data.json');
 import data from './data.json'
 // console.log(data.testimonials[0]);
 

@@ -155,15 +155,6 @@ var _lozad = _interopRequireDefault(require("lozad"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* import _ from 'lodash';
-
-// this does just load the whole file instead of specific images which kinda defeats the point
-// tree shaking could probably fix this
-var req = require.context("./images/", false, /.*\.(png|jpe?g|svg)$/);
-req.keys().forEach(function(key){
-  req(key);
-}); */
-// const data = require('./data.json');
 // console.log(data.testimonials[0]);
 // fill testimonials with JSON data
 for (var j = 0; j < _data.default.testimonials.length; j++) {
@@ -320,7 +311,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60926" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

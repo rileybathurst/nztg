@@ -1,0 +1,298 @@
+/*------------------------------------*\
+  #NZTG
+\*------------------------------------*/
+
+:root {
+  --breakpoint: 30rem; /* generally not used its the media query breakpoint */
+  --page-width: 46rem;
+  --thin-crust: 2rem;
+  --deep-dish: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  /* max-width: 100%; /* reset */
+  /* overflow-x: hidden; */
+  /* word-wrap: anywhere; */
+}
+
+/*------------------------------------*/
+  /* #TYPOGRAPHY */
+/*------------------------------------*/
+
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* https://type-scale.com/ */
+/* 1.5 major third */
+/* keep the tags as the type scale */
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+.h1 { /* I dont like this naming */
+  font-size: clamp(1.953rem, 1.5vw, 3.052rem);
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+.h2 {
+  font-size: clamp(1.25rem, 1.5vw, 2.441rem); /* h4 at smallest */
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+.h3 {
+  font-size: clamp(1.25rem, 1.5vw, 1.953rem); /* h4 at smallest */
+}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+small, .text_small {font-size: 0.8rem;}
+
+a {
+  color: #43c6ac;
+}
+
+a:hover {
+  color: #00957d;
+  text-decoration: line-through;
+}
+
+ul {
+  line-height: 2em;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.screen-reader {
+  width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/*------------------------------------*/
+  /* #LAYOUT */
+/*------------------------------------*/
+
+
+.block {
+  display: block;
+}
+
+.full-width, .full-width img{
+  width: 100%;
+  max-width: 100%;
+  z-index: -1;
+}
+
+.container {
+  max-width: var(--page-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.io-push {
+  animation-timing-function: ease; /* needed to stop the page jumping on a part of the io pulling up and down */
+  /* animation-name: slidein; */
+}
+
+/* this isnt working and needs to be used on the margins */
+/* @keyframes slidein {
+  from {
+  opacity: 0;
+  margin-top: 0;
+  }
+
+  to {
+  opacity: 100%;
+  margin-top: 20em;
+  }
+} */
+
+.io-parallax {
+  animation-timing-function: ease;
+  clip-path: polygon(
+    0 var(--thin-crust),
+    100% 0,
+    100% calc(100% - 7rem), /* 5 from the io parallax */
+    0 calc(100% - 5rem));
+}
+
+@media(min-width: 30rem) {
+  .io-parallax {
+    clip-path: polygon(
+      0 var(--deep-dish),
+      100% 0,
+      100% calc(100% - 12rem), /* 5 from the io parallax */
+      0 calc(100% - 5rem));
+    max-height: 40rem;
+  }
+}
+
+/*------------------------------------*/
+  /* #HEADER */
+/*------------------------------------*/
+
+header {
+  display: grid;
+  justify-items: center;
+  overflow:hidden
+}
+
+header > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+header picture {
+  min-height: 10rem; /* hack to fix small size the logo getting hidden */
+  animation-timing-function: ease;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 calc(100% - var(--thin-crust)));
+}
+
+@media (min-width: 30rem) {
+  header picture {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--deep-dish)), 0 100%);
+    max-height: 35rem;
+  }
+}
+
+.header-logo {
+  padding: 1rem;
+  max-width: 50%;
+}
+@media (min-width: 30rem) {
+  .header-logo {
+    padding: 2rem;
+  }
+}
+
+/*------------------------------------*/
+  /* #FOOTER */
+/*------------------------------------*/
+
+footer {
+  clip-path: polygon(0 var(--thin-crust), 100% 0, 100% 100%, 0 100%);
+}
+@media (min-width: 30rem) {
+  footer {
+    clip-path: polygon(0 var(--deep-dish), 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+footer picture {
+  animation-timing-function: ease;
+}
+
+.footer-img {
+  background: black;
+  z-index: -2; /* get behind the full width img */
+}
+
+.footer-text {
+  margin-block: 5rem;
+  place-self: center;
+  text-align: center;
+  color: white;
+}
+
+
+/*------------------------------------*/
+  /* #SERVICES #TESTIMONIALS */
+/*------------------------------------*/
+
+#services, #testimonials {
+  display: grid;
+  grid-gap: 2rem;
+  /* https://codepen.io/rachelandrew/pen/GZQYQa */
+  grid-template-columns: repeat(auto-fill, minmax(22rem,1fr));
+  /* has a minor problem when the screen gets below 22em wide */
+  max-width: 46rem;
+}
+
+.service, .testimonial {
+  display: grid; /* needed for the background */
+  grid-auto-rows: min-content; /* pulls everything close */
+}
+
+.service > *,
+.testimonial > * {
+  grid-column: 1;
+  padding-left: 1em;
+  padding-right: 1em;
+  align-self: start;
+}
+
+.service .icon {
+  align-self: center;
+  justify-self: center;
+  margin-top: 2em;
+}
+
+.service p,
+.service .multi-p {
+  align-self: stretch;
+  margin-bottom: 2em;
+}
+
+.service .icon,
+.testimonial p {
+  grid-row: 1;
+}
+
+.service h3,
+.testimonial blockquote {
+  grid-row: 2;
+}
+
+.service p,
+.service .multi-p {
+  grid-row: 3;
+}
+
+.testimonial p {
+  margin-top: 3em;
+  grid-column: 1;
+}
+
+.testimonial blockquote {
+  margin-bottom: 3em;
+  grid-column: 1;
+}
+
+.skewer {
+  background: rgb(67,198,172);
+  background: linear-gradient(15deg, rgba(67,198,172,0.33) 0%, rgba(248,255,174,0.33) 100%);
+  border-radius: 10px;
+  transform: skewY(-7deg);
+  grid-row: 1/4;
+  grid-column: 1;
+  align-self: stretch;
+  justify-self: stretch;
+}

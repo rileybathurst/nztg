@@ -180,13 +180,13 @@ for (var j = 0; j < _data.default.testimonials.length; j++) {
   schemaReview.textContent = _data.default.testimonials[j].test; // add this to the span
 
   myH3.textContent = _data.default.testimonials[j].author;
-  myTestimonal.appendChild(myBackground); // empty div for styling
-
   myTestimonal.appendChild(myPara1); // p after the empty div
 
   myPara1.appendChild(schemaReview); // puts the span inside the p
 
   myTestimonal.appendChild(myH3); // author after the p
+
+  myTestimonal.appendChild(myBackground); // empty div for styling
 
   document.getElementById('testimonials').appendChild(myTestimonal); // article in the section
 } // Large margins when IO comes into play
@@ -320,7 +320,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62492" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63007" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

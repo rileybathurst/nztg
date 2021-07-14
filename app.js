@@ -30,10 +30,10 @@ for (var j = 0; j < data.testimonials.length; j++) {
   schemaReview.textContent = data.testimonials[j].test; // add this to the span
   myH3.textContent = data.testimonials[j].author;
 
-  myTestimonal.appendChild(myBackground); // empty div for styling
   myTestimonal.appendChild(myPara1); // p after the empty div
   myPara1.appendChild(schemaReview); // puts the span inside the p
   myTestimonal.appendChild(myH3); // author after the p
+  myTestimonal.appendChild(myBackground); // empty div for styling
 
   document.getElementById('testimonials').appendChild(myTestimonal); // article in the section
 }

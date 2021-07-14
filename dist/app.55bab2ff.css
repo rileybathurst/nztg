@@ -15,46 +15,51 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 1.953rem;
+}
+@media (min-width: 30rem) {
+  h1 {
+    font-size: 3.052rem;
+  }
 }
 
 h2 {
-  font-size: 1.953em;
+  font-size: 1.563rem;
 }
-@media (min-width: 22em) {
+@media (min-width: 30rem) {
   h2 {
-    font-size: 2.441em;
+    font-size: 2.441rem;
   }
 }
 
 footer h2 {
-  font-size: 1.563em;
+  font-size: 1.25rem;
 }
-@media (min-width: 22em) {
+@media (min-width: 30rem) {
   footer h2 {
-    font-size: 2.441em;
+    font-size: 2.441rem;
   }
 }
 
 h3 {
-  font-size: 1.563em;
+  font-size: 1.25rem;
 }
-@media (min-width: 22em) {
+@media (min-width: 30rem) {
   h3 {
-    font-size: 1.953em;
+    font-size: 1.953rem;
   }
 }
 
 h4 {
-  font-size: 1.563em;
+  font-size: 1.563rem;
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 small, .text_small {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 a {
@@ -70,7 +75,7 @@ ul {
   line-height: 2em;
 }
 
-quote {
+blockquote {
   font-style: italic;
 }
 
@@ -116,7 +121,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  place-items: center;
+  justify-items: center;
 }
 
 .grid {
@@ -159,13 +164,37 @@ header {
   grid-row: 1;
 }
 
+header {
+  overflow: hidden;
+}
+
 header picture {
-  min-height: 20em;
+  min-height: 20rem;
+  animation-timing-function: ease;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 calc(100% - 1.5rem));
+}
+@media (min-width: 30rem) {
+  header picture {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 0 calc(100% - 2rem));
+    max-height: 35rem;
+  }
+}
+
+footer {
+  clip-path: polygon(0 5rem, 100% 0, 100% 100%, 0 100%);
+}
+footer picture {
+  animation-timing-function: ease;
 }
 
 .header-logo {
   padding: 1em;
   max-width: 50%;
+}
+@media (min-width: 30rem) {
+  .header-logo {
+    padding: 2em;
+  }
 }
 
 .io-push {
@@ -185,6 +214,13 @@ header picture {
 } */
 .io-parallax {
   animation-timing-function: ease;
+  clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 6rem), 0 calc(100% - 1rem));
+}
+@media (min-width: 30rem) {
+  .io-parallax {
+    clip-path: polygon(0 5rem, 100% 0, 100% calc(100% - 10rem), 0 calc(100% - 5rem));
+    max-height: 40rem;
+  }
 }
 
 #services {
@@ -224,7 +260,7 @@ header picture {
 }
 
 .service h3, .service .icon, .service p, .service .multi-p,
-.testimonial p, .testimonial quote {
+.testimonial p, .testimonial blockquote {
   grid-column: 1;
   padding-left: 1em;
   padding-right: 1em;
@@ -249,7 +285,7 @@ header picture {
 }
 
 .service h3,
-.testimonial quote {
+.testimonial blockquote {
   grid-row: 2;
 }
 
@@ -262,7 +298,7 @@ header picture {
   margin-top: 3em;
 }
 
-.testimonial quote {
+.testimonial blockquote {
   margin-bottom: 3em;
 }
 
@@ -277,16 +313,13 @@ header picture {
   justify-self: stretch;
 }
 
-footer picture {
-  min-height: 30em;
-}
-
 .footer-img {
   background: black;
   z-index: -2;
 }
 
 .footer-text {
+  margin-top: 5rem;
   align-self: center;
   justify-self: center;
   text-align: center;

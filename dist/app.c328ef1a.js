@@ -133,7 +133,7 @@ module.exports = {
     "author": "Sue"
   }]
 };
-},{}],"../node_modules/lozad/dist/lozad.min.js":[function(require,module,exports) {
+},{}],"node_modules/lozad/dist/lozad.min.js":[function(require,module,exports) {
 var define;
 /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
@@ -168,24 +168,64 @@ req.keys().forEach(function(key){
 // fill testimonials with JSON data
 for (var j = 0; j < _data.default.testimonials.length; j++) {
   var myTestimonal = document.createElement('article');
+  myTestimonal.setAttribute("class", "testimonial io-push");
   var myBackground = document.createElement('div');
   myBackground.setAttribute("class", "skewer");
-  myTestimonal.setAttribute("class", "testimonial io-push");
   var myPara1 = document.createElement('p');
   var schemaReview = document.createElement('span');
-  schemaReview.setAttribute("itemprop", "review");
-  var myH3 = document.createElement('quote');
-  schemaReview.textContent = _data.default.testimonials[j].test;
+  schemaReview.setAttribute("itemprop", "review"); // metatag
+
+  var myH3 = document.createElement('blockquote'); // why is my H3 a blockquote
+
+  schemaReview.textContent = _data.default.testimonials[j].test; // add this to the span
+
   myH3.textContent = _data.default.testimonials[j].author;
-  myTestimonal.appendChild(myBackground);
-  myTestimonal.appendChild(myPara1);
-  myPara1.appendChild(schemaReview);
-  myTestimonal.appendChild(myH3);
-  document.getElementById('testimonials').appendChild(myTestimonal);
+  myTestimonal.appendChild(myBackground); // empty div for styling
+
+  myTestimonal.appendChild(myPara1); // p after the empty div
+
+  myPara1.appendChild(schemaReview); // puts the span inside the p
+
+  myTestimonal.appendChild(myH3); // author after the p
+
+  document.getElementById('testimonials').appendChild(myTestimonal); // article in the section
 } // Large margins when IO comes into play
 
 
 if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+  var createObserver = function createObserver() {
+    var observer;
+    var options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: buildThresholdList()
+    };
+    observer = new IntersectionObserver(handleIntersect, options);
+    pusher.forEach(function (pushers) {
+      observer.observe(pushers);
+    });
+  };
+
+  var buildThresholdList = function buildThresholdList() {
+    var thresholds = [];
+    var numSteps = 100;
+
+    for (var i = 1.0; i <= numSteps; i++) {
+      var ratio = i / numSteps;
+      thresholds.push(ratio);
+    }
+
+    thresholds.push(0);
+    return thresholds;
+  };
+
+  var handleIntersect = function handleIntersect(entries, observer) {
+    entries.forEach(function (entry) {
+      entry.target.style.marginTop = mT.replace("ratio", entry.intersectionRatio * 5);
+      prevRatio = entry.intersectionRatio;
+    });
+  };
+
   var iopush = document.querySelectorAll('.io-push');
   var numSteps = 20.0;
   var pusher; // naming choice is too close to push
@@ -197,43 +237,43 @@ if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window &&
     pusher = document.querySelectorAll(".io-push");
     createObserver();
   }, false);
-
-  function createObserver() {
-    var observer;
-    var options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: buildThresholdList()
-    };
-    observer = new IntersectionObserver(handleIntersect, options);
-    pusher.forEach(function (pushers) {
-      observer.observe(pushers);
-    });
-  }
-
-  function buildThresholdList() {
-    var thresholds = [];
-    var numSteps = 100;
-
-    for (var i = 1.0; i <= numSteps; i++) {
-      var ratio = i / numSteps;
-      thresholds.push(ratio);
-    }
-
-    thresholds.push(0);
-    return thresholds;
-  }
-
-  function handleIntersect(entries, observer) {
-    entries.forEach(function (entry) {
-      entry.target.style.marginTop = mT.replace("ratio", entry.intersectionRatio * 5);
-      prevRatio = entry.intersectionRatio;
-    });
-  }
 } // Parallax images to add to the drop down effects
 
 
 if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+  var paraObserver = function paraObserver() {
+    var pObserver;
+    var pOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: paraThresholdList()
+    };
+    pObserver = new IntersectionObserver(pHandleIntersect, pOptions);
+    para.forEach(function (paras) {
+      pObserver.observe(paras);
+    });
+  };
+
+  var paraThresholdList = function paraThresholdList() {
+    var paraThresholds = [];
+    var paraSteps = 100;
+
+    for (var i = 1.0; i <= paraSteps; i++) {
+      var ratio = i / paraSteps;
+      paraThresholds.push(ratio);
+    }
+
+    paraThresholds.push(0);
+    return paraThresholds;
+  };
+
+  var pHandleIntersect = function pHandleIntersect(pEntries, pObserver) {
+    pEntries.forEach(function (entry) {
+      entry.target.style.webkitTransform = pT.replace("pRatio", entry.intersectionRatio * 5);
+      paraRatio = entry.intersectionRatio;
+    });
+  };
+
   var ioparallax = document.querySelectorAll('.io-parallax'); // doesnt seem used can I skip it
 
   var paraSteps = 20.0;
@@ -246,46 +286,13 @@ if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window &&
     para = document.querySelectorAll(".io-parallax");
     paraObserver();
   }, false);
-
-  function paraObserver() {
-    var pObserver;
-    var pOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: paraThresholdList()
-    };
-    pObserver = new IntersectionObserver(pHandleIntersect, pOptions);
-    para.forEach(function (paras) {
-      pObserver.observe(paras);
-    });
-  }
-
-  function paraThresholdList() {
-    var paraThresholds = [];
-    var paraSteps = 100;
-
-    for (var i = 1.0; i <= paraSteps; i++) {
-      var ratio = i / paraSteps;
-      paraThresholds.push(ratio);
-    }
-
-    paraThresholds.push(0);
-    return paraThresholds;
-  }
-
-  function pHandleIntersect(pEntries, pObserver) {
-    pEntries.forEach(function (entry) {
-      entry.target.style.webkitTransform = pT.replace("pRatio", entry.intersectionRatio * 5);
-      paraRatio = entry.intersectionRatio;
-    });
-  }
 } // Lazy load
 
 
 var observer = (0, _lozad.default)(); // lazy loads elements with default selector as '.lozad'
 
 observer.observe();
-},{"./data.json":"data.json","lozad":"../node_modules/lozad/dist/lozad.min.js"}],"../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./data.json":"data.json","lozad":"node_modules/lozad/dist/lozad.min.js"}],"../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -313,7 +320,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62492" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -489,5 +496,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map

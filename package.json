@@ -4,17 +4,14 @@
   "description": "new zealand tour guide single page site",
   "main": "./index.html",
   "scripts": {
-    "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "start": "parcel serve ./index.html",
+    "build": "parcel build ./index.html"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",
     "parcel": "^2.0.0-beta.2",
-    "sass": "^1.32.11"
-  },
-  "dependencies": {
-    "lozad": "^1.9.0"
+    "sass": "^1.35.2"
   }
 }

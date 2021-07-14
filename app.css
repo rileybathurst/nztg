@@ -16,6 +16,23 @@ body {
   line-height: 1.5;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+}
+
+svg {
+  fill: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  svg {
+    fill: white;
+  }
+}
+
 /*------------------------------------*/
   /* #TYPOGRAPHY */
 /*------------------------------------*/
@@ -132,6 +149,12 @@ blockquote {
   }
 } */
 
+@media (prefers-color-scheme: dark) {
+  picture {
+    opacity: 0.9;
+  }
+}
+
 .io-parallax {
   animation-timing-function: ease;
   clip-path: polygon(
@@ -181,12 +204,17 @@ header picture {
 }
 
 .header-logo {
-  padding: 1rem;
-  max-width: 50%;
+  margin-block-start: 1rem;
+  padding: 0.5rem;
+  max-width: 50vw;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  aspect-ratio: 1;
 }
 @media (min-width: 30rem) {
   .header-logo {
-    padding: 2rem;
+    padding: 1rem;
+    max-width: 33vw;
   }
 }
 
@@ -217,6 +245,8 @@ footer picture {
   place-self: center;
   text-align: center;
   color: white;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 2rem;
 }
 
 

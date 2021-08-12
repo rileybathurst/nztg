@@ -1,4 +1,4 @@
-import data from './data.json'
+import data from "./data.json";
 // console.log(data.testimonials[0]);
 
 // fill testimonials with JSON data

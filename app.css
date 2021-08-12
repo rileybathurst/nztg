@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background: hsl(0, 0%, 96%);
+  background: hsl(0, 0%, 92%);
 }
 
 @media (prefers-color-scheme: dark) {

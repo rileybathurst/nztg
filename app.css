@@ -14,11 +14,12 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  background: hsl(0, 0%, 96%);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
+    background: hsl(0, 0%, 8%);
     color: white;
   }
 }
@@ -116,10 +117,24 @@ blockquote {
 }
 
 .container {
+  background: hsl(0, 0%, 98%);
+  border: 1px solid white;
+  border-radius: 3px;
   max-width: var(--page-width);
   margin-inline: auto;
   padding-inline: 1rem;
   padding-bottom: 1.5rem;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 0 1rem 1rem rgb(250, 250, 250);
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: hsl(0, 0%, 4%);
+    border-color: black;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0 0 1rem 1rem rgb(5, 5, 5);
+  }
 }
 
 .grid {
@@ -247,12 +262,20 @@ footer picture {
   color: white;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 2rem;
+  box-shadow: none; /* overwrite body */
 }
 
 
 /*------------------------------------*/
   /* #SERVICES #TESTIMONIALS */
 /*------------------------------------*/
+
+ /* overwrite body */
+#services, #testimonial__wrap {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
 
 #services, #testimonials {
   display: grid;
@@ -261,6 +284,7 @@ footer picture {
   grid-template-columns: repeat(auto-fill, minmax(22rem,1fr));
   /* has a minor problem when the screen gets below 22em wide */
   max-width: 46rem;
+
 }
 
 .service, .testimonial {

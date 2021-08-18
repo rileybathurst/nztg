@@ -24,6 +24,20 @@
   <meta name="twitter:image" content="https://nztg.s3-ap-southeast-2.amazonaws.com/nztourguide-opengraph-image.jpg">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
+
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+    img-src 'self' https://nztg.s3-ap-southeast-2.amazonaws.com/;
+    connect-src ws://localhost:* ;"
+    
+    Header set Strict-Transport-Security: max-age=63072000
+
+    Header set X-Content-Type-Options: nosniff
+
+    Header set X-Frame-Options: DENY
+    />
+
 </head>
 
 <body>

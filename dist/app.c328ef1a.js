@@ -131,6 +131,9 @@ module.exports = {
   }, {
     "test": "Richard, thank you for a wonderful tour you are an excellent driver & guide and I learnt so much from your informative commentary. Thank you too for helping me with my rather large suit case, Lol! Best wishes",
     "author": "Sue"
+  }, {
+    "test": "While it has been some time since enjoying our tour conducted by Richard, I have to say it was the most informed, attentive and humorous tour we have had the pleasure to travel on. I would certainly want to travel again with him on our next tour to NZ.",
+    "author": "Everard, Sydney, Australia"
   }]
 };
 },{}],"node_modules/lozad/dist/lozad.min.js":[function(require,module,exports) {
@@ -311,7 +314,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64880" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58446" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

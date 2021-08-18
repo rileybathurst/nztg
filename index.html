@@ -31,12 +31,12 @@
     img-src 'self' https://nztg.s3-ap-southeast-2.amazonaws.com/;
     connect-src ws://localhost:* ;"
     
-    Header set Strict-Transport-Security: max-age=63072000
+    Strict-Transport-Security: max-age=63072000
 
-    Header set X-Content-Type-Options: nosniff
+    http-equiv="X-Content-Type-Options" content="nosniff"
 
-    Header set X-Frame-Options: DENY
-    />
+    http-equiv="X-Frame-Options" content="DENY"
+  />
 
 </head>
 

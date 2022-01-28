@@ -2,7 +2,6 @@
   "name": "nztg2",
   "version": "2.0.1",
   "description": "new zealand tour guide single page site",
-  "main": "./index.js",
   "scripts": {
     "start": "parcel serve ./index.html",
     "build": "parcel build ./index.html"

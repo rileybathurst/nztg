@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "1.12.3",
-    "prettier": "^2.3.2"
+    "parcel": "^2.2.1",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "lozad": "^1.16.0"

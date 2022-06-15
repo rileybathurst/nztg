@@ -2,11 +2,18 @@
   "name": "nztg2",
   "version": "2.0.1",
   "description": "new zealand tour guide single page site",
+  "private": true,
   "scripts": {
     "start": "parcel serve ./index.html",
     "build": "parcel build ./index.html"
   },
-  "author": "",
+  "author": {
+    "name": "Riley Bathurst",
+    "email": "riley@rileybathurst.com",
+    "url": "https://rileybathurst.com"
+  },
+  "homepage": "https://nztourguide.co.nz/",
+  "repository": "github:rileybathurst/nztg",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.2.1",

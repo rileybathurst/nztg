@@ -21,14 +21,16 @@
   <meta name="twitter:url" content="https://nztourguide.co.nz">
   <meta name="twitter:title" content="New Zealand Tour Guide Services">
   <meta name="twitter:description" content="Why Tour Like Sheep ; When Your Tour Can Be More Unique">
-  <meta name="twitter:image" content="https://nztg.s3-ap-southeast-2.amazonaws.com/nztourguide-opengraph-image.jpg">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="twitter:image" content="https://nztg.s3-ap-southeast-2.amazonaws.com/nztourguide-opengraph-image.jpg" />
+  <meta name="msapplication-TileColor" content="#00aba9" />
+  <meta name="theme-color" content="#ffffff" />
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';
     img-src 'self' https://nztg.s3-ap-southeast-2.amazonaws.com/;
     script-src 'self' 'unsafe-inline' 'unsafe-eval';
-    connect-src ws://localhost:* ;" />
+    connect-src 'self' ;" />
+
+<script type="module" src="./app.js"></script>
 
 </head>
 
@@ -374,7 +376,6 @@
       </div>
     </div>
   </footer>
-  <script type="module" src="./app.js"></script>
 </body>
 
 </html>

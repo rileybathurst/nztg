@@ -1,21 +1,24 @@
-import data from "./data.json";
+// biome-ignore assist/source/organizeImports: <theres one I dont know what you want biome>
+import data from "../data.json";
 // console.log(data.testimonials[0]);
 
-// fill testimonials with JSON data
-for (var j = 0; j < data.testimonials.length; j++) {
+/*------------------------------------*/
 
-  var myTestimonal = document.createElement('article');
+// fill testimonials with JSON data
+for (let j = 0; j < data.testimonials.length; j++) {
+
+  const myTestimonal = document.createElement('article');
   myTestimonal.setAttribute("class", "testimonial io-push");
 
-  var myBackground = document.createElement('div');
+  const myBackground = document.createElement('div');
   myBackground.setAttribute("class", "skewer");
 
-  var myPara1 = document.createElement('p');
+  const myPara1 = document.createElement('p');
 
-  var schemaReview = document.createElement('span');
+  const schemaReview = document.createElement('span');
   schemaReview.setAttribute("itemprop", "review"); // metatag
 
-  var myH3 = document.createElement('blockquote'); // why is my H3 a blockquote
+  const myH3 = document.createElement('blockquote'); // why is my H3 a blockquote
 
   schemaReview.textContent = data.testimonials[j].test; // add this to the span
   myH3.textContent = data.testimonials[j].author;
@@ -33,17 +36,12 @@ if ('IntersectionObserver' in window &&
   'IntersectionObserverEntry' in window &&
   'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
 
-  let iopush = document.querySelectorAll('.io-push');
-
-  var numSteps = 20.0;
-
-  var pusher; // naming choice is too close to push
-  var prevRatio = 0.0;
-  var mT = "ratioem";
+  let pusher; // naming choice is too close to push
+  const mT = "ratioem";
 
   // Set things up.
 
-  window.addEventListener("load", function (event) {
+  window.addEventListener("load", () => {
     pusher = document.querySelectorAll(".io-push");
 
     createObserver();
@@ -66,11 +64,11 @@ if ('IntersectionObserver' in window &&
   }
 
   function buildThresholdList() {
-    var thresholds = [];
-    var numSteps = 100;
+    const thresholds = [];
+    const numSteps = 100;
 
-    for (var i = 1.0; i <= numSteps; i++) {
-      var ratio = i / numSteps;
+    for (let i = 1.0; i <= numSteps; i++) {
+      const ratio = i / numSteps;
       thresholds.push(ratio);
     }
 
@@ -78,8 +76,8 @@ if ('IntersectionObserver' in window &&
     return thresholds;
   }
 
-  function handleIntersect(entries, observer) {
-    entries.forEach(function (entry) {
+  function handleIntersect(entries) {
+    entries.forEach((entry) => {
       entry.target.style.marginTop = mT.replace("ratio", (entry.intersectionRatio * 5));
       prevRatio = entry.intersectionRatio;
     });
@@ -91,17 +89,12 @@ if ('IntersectionObserver' in window &&
   'IntersectionObserverEntry' in window &&
   'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
 
-  let ioparallax = document.querySelectorAll('.io-parallax'); // doesnt seem used can I skip it
-
-  var paraSteps = 20.0;
-
-  var para; // naming choice is too close to push
-  var paraRatio = 0.0;
-  var pT = "translateY(pRatioem)";
+  let para; // naming choice is too close to push
+  const pT = "translateY(pRatioem)";
 
   // Set things up.
 
-  window.addEventListener("load", function (event) {
+  window.addEventListener("load", () => {
     para = document.querySelectorAll(".io-parallax");
 
     paraObserver();
@@ -124,11 +117,11 @@ if ('IntersectionObserver' in window &&
   }
 
   function paraThresholdList() {
-    var paraThresholds = [];
-    var paraSteps = 100;
+    const paraThresholds = [];
+    const paraSteps = 100;
 
-    for (var i = 1.0; i <= paraSteps; i++) {
-      var ratio = i / paraSteps;
+    for (let i = 1.0; i <= paraSteps; i++) {
+      const ratio = i / paraSteps;
       paraThresholds.push(ratio);
     }
 
@@ -136,15 +129,10 @@ if ('IntersectionObserver' in window &&
     return paraThresholds;
   }
 
-  function pHandleIntersect(pEntries, pObserver) {
-    pEntries.forEach(function (entry) {
+  function pHandleIntersect(pEntries) {
+    pEntries.forEach((entry) => {
       entry.target.style.webkitTransform = pT.replace("pRatio", (entry.intersectionRatio * 5));
       paraRatio = entry.intersectionRatio;
     });
   }
 }
-
-// Lazy load
-import lozad from 'lozad';
-const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-observer.observe();

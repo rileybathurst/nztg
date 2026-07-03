@@ -8,7 +8,10 @@
   },
   "repository": "github:rileybathurst/nztg",
   "dependencies": {
-    "astro": "^7.0.5"
+    "@astrojs/check": "^0.9.9",
+    "astro": "^7.0.5",
+    "stay-gold": "^1.5.0",
+    "typescript": "^6.0.3"
   },
   "description": "new zealand tour guide single page site",
   "homepage": "https://nztourguide.co.nz/",
@@ -16,7 +19,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "bun run stay-gold && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   }

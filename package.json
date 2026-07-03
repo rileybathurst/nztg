@@ -1,21 +1,23 @@
 {
   "name": "nztg",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "author": {
     "name": "Riley Bathurst",
     "email": "riley@rileybathurst.com",
     "url": "https://rileybathurst.com"
   },
   "repository": "github:rileybathurst/nztg",
-  "devDependencies": {
-    "parcel": "^2.16.4"
+  "dependencies": {
+    "astro": "^7.0.5"
   },
   "description": "new zealand tour guide single page site",
   "homepage": "https://nztourguide.co.nz/",
   "license": "ISC",
   "private": true,
   "scripts": {
-    "start": "parcel serve ./index.html",
-    "build": "parcel build ./index.html"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   }
 }
